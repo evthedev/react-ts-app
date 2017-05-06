@@ -7,6 +7,7 @@
     "@types/node": "^7.0.18",
     "@types/react": "^15.0.24",
     "@types/react-dom": "^15.5.0",
+    "cpx": "^1.5.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   },
@@ -15,10 +16,12 @@
   },
   "scripts": {
     "start": "react-scripts-ts start",
-    "build": "react-scripts-ts build",
+    "copy": "cpx 'build/**/*' doc",
+    "build": "yarn copy & react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject"
   },
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "homepage": "https://evthedev.github.io/react-ts-app/"
 }
