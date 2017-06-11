@@ -1,9 +1,14 @@
 import * as React from 'react';
+import DataSet from './components/dataset';
 import './App.css';
 
 const logo = require('./logo.svg');
 
-class App extends React.Component<{}, null> {
+interface Props extends React.Props<App> {
+}
+
+class App extends React.Component<Props, {}> {
+  dataset: string = 'helo';
   render() {
     return (
       <div className="App">
@@ -11,9 +16,9 @@ class App extends React.Component<{}, null> {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to Reacttt</h2>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
+        <div className="data__set">
+          <DataSet items={this.dataset} />
+        </div>
       </div>
     );
   }
